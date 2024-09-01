@@ -33,8 +33,35 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Frontend Interview Task: Exam Management System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create a web application that allows users to create, update, and manage exams consisting of multiple-choice
+questions. Each question should have exactly one correct answer and at least two possible answers. The
+application should be implemented using Next.js with a focus on functionality.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Pages:
+
+1. Exam Editor Page:
+This page enables users to create or update an exam. Each exam consists of multiple-choice
+questions.
+
+Actions in the Form:
+○ Add Question: Include a new question in the exam.
+○ Edit Question: Allow users to edit the question title and description.
+○ Remove Question: Delete an existing question from the exam.
+○ Add Answer: Add a new answer to a question.
+○ Edit Answer: Allow users to edit the answer title and description.
+○ Delete Answer: Remove an answer from a question.
+○ Make Answer Correct: Designate an answer as the correct choice for a question.
+The submit button should be enabled only if the exam fields are valid and all questions (at least one)
+are valid.
+After Submitting:
+○ The exam should be added to the list of exams stored in local storage.
+2. List Exams Page:
+This page displays a list of exams stored in local storage. Users should be able to perform the following
+actions:
+○ View Exams: Display a list of all exams with options to update each one. Clicking on an exam
+should link to the Exam Editor Page, populating the form with the current exam values.
+○ Create New Exam: A button located in the top-right corner of the page allows users to create a
+new exam. This button should link to the Exam Editor Page with an empty form for entering new
+exam details.
