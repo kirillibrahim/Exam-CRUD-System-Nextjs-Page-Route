@@ -12,7 +12,7 @@ const ExamEditor = () => {
   const id = searchParams.get('id');
   const isEdit = Boolean(id);
 
-  const { control, handleSubmit, reset, formState: { isValid } } = useForm<Exam>({
+  const { control, handleSubmit, reset, formState: { errors, isValid } } = useForm<Exam>({
     defaultValues: {
       title: '',
       description: '',
@@ -49,18 +49,27 @@ const ExamEditor = () => {
         <Controller
           name="title"
           control={control}
-          rules={{ required: "This is required." }}
-          render={({ field }) => <input {...field} className="border-gray-300 border rounded-md p-2 w-full" />}
+          rules={{ required: "Exam Title is required." }}
+          render={({ field }) => (
+            <>
+              <input {...field} className="border-gray-300 border rounded-md p-2 w-full" />
+              {errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
+            </>
+          )}
         />
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700 font-semibold mb-2">Description *</label>
+        <label className="block text-gray-700 font-semibold mb-2">Description</label>
         <Controller
           name="description"
-          rules={{ required: true }}
           control={control}
-          render={({ field }) => <textarea {...field} className="border-gray-300 border rounded-md p-2 w-full h-32" />}
+          render={({ field }) => (
+            <>
+              <textarea {...field} className="border-gray-300 border rounded-md p-2 w-full h-32" />
+             
+            </>
+          )}
         />
       </div>
 
@@ -122,5 +131,4 @@ const ExamEditor = () => {
 
 
 export default ExamEditor;
-
 
