@@ -5,7 +5,7 @@ import { Exam } from '../constants/types';
 import { getExamByIdFromLocalStorage, saveExamToLocalStorage } from '../utils/localStorageUtils';
 import Question from './Question';
 
-const ExamEditor = () => {
+const ExamEditor: React.FC = () => {
   const router = useRouter()
   const  {id}  = router.query; // Exam ID from query parameter
 

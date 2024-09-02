@@ -8,7 +8,7 @@ interface QuestionProps {
   errors: any;
 }
 
-const Question = ({ control, questionIndex, removeQuestion, errors }: QuestionProps) => {
+const Question: React.FC<QuestionProps>  = ({ control, questionIndex, removeQuestion, errors }) => {
   return (
     <div className="border border-gray-200 rounded-lg p-4 mb-4 bg-gray-50">
       <div className="mb-4">

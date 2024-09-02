@@ -17,7 +17,7 @@ export const getExamByIdFromLocalStorage = (id: string): Exam | null => {
   return parsedExams.find((exam) => exam.id === id) || null;
 };
 
-export const saveExamToLocalStorage = (exam: Exam) => {
+export const saveExamToLocalStorage = (exam: Exam): void => {
   const exams = getExamsFromLocalStorage();
   if (exam.id) {
     // Update existing exam
@@ -30,7 +30,7 @@ export const saveExamToLocalStorage = (exam: Exam) => {
   }
 };
 
-export const deleteExamFromLocalStorage = (id: string) => {
+export const deleteExamFromLocalStorage = (id: string): void => {
   const exams = getExamsFromLocalStorage();
   const updatedExams = exams.filter((exam) => exam.id !== id);
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedExams));

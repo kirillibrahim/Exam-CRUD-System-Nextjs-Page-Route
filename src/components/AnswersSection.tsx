@@ -7,7 +7,7 @@ type AnswersSectionProps = {
   errors: any;
 };
 
-const AnswersSection = ({ control, questionIndex, errors }: AnswersSectionProps) => {
+const AnswersSection: React.FC<AnswersSectionProps> = ({ control, questionIndex, errors }) => {
   const { fields: answerFields, append: appendAnswer, remove: removeAnswer } = useFieldArray({
     control,
     name: `questions.${questionIndex}.answers`,
