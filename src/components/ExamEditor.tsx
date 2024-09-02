@@ -1,4 +1,4 @@
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useForm, Controller, useFieldArray } from 'react-hook-form';
 import { Exam } from '../constants/types';
@@ -6,9 +6,9 @@ import { getExamByIdFromLocalStorage, saveExamToLocalStorage } from '../utils/lo
 import Question from './Question';
 
 const ExamEditor = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const id = searchParams.get('id');
+  const router = useRouter()
+  const  {id}  = router.query; // Exam ID from query parameter
+
   const isEdit = Boolean(id);
 
   const { control, handleSubmit, reset, formState: { errors, isValid } } = useForm<Exam>({

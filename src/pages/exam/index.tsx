@@ -1,6 +1,3 @@
-// "use client"
-
-import { usePathname  } from 'next/navigation';
 import { useRouter } from 'next/router';
 import ExamEditor from '../../components/ExamEditor';
 import { useEffect, useState } from 'react';
